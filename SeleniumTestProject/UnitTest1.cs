@@ -33,7 +33,7 @@ namespace Tests
         {
             var title = driver.Title;
 
-            Assert.IsTrue(title == "n11.com - Alışverişin Uğurlu");
+            Assert.IsTrue(title == "n11.com - Alışverişin Uğurlu Adresi");
         }
     }
 }
