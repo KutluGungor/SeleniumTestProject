@@ -44,8 +44,8 @@ namespace Tests
         {
             driver.Navigate().GoToUrl("http://www.n11.com/giris-yap");
             Assert.IsTrue(driver.Title == "Giriş Yap - n11.com");
-            driver.FindElementById("email").SendKeys("kutlugungor58@hotmail.com");
-            driver.FindElementById("password").SendKeys("k.456289");
+            driver.FindElementById("email").SendKeys("*******");
+            driver.FindElementById("password").SendKeys("*******");
             driver.FindElementById("loginButton").Click();
 
             var text = driver.FindElementByCssSelector(".menuLink.user").Text;
