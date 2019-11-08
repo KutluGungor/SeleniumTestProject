@@ -11,8 +11,6 @@ namespace Tests
     [TestFixture]
     public class Tests
     {
-
-
         private RemoteWebDriver driver;
 
         [SetUp]
@@ -21,13 +19,13 @@ namespace Tests
             string driverDirectory = Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Environment.CurrentDirectory))), "Driver");
             driver = new ChromeDriver(driverDirectory);
             driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl("http://www.n11.com");
+            driver.Navigate().GoToUrl("https://www.n11.com");
         }
 
         [TearDown]
         public void Close()
         {
-            Thread.Sleep(3000);
+            Thread.Sleep(300);
             driver.Quit();
         }
 
@@ -42,14 +40,15 @@ namespace Tests
         [Test]
         public void LoginTest()
         {
-            driver.Navigate().GoToUrl("http://www.n11.com/giris-yap");
+            driver.Navigate().GoToUrl("https://www.n11.com/giris-yap");
             Assert.IsTrue(driver.Title == "Giriş Yap - n11.com");
-            driver.FindElementById("email").SendKeys("*******");
-            driver.FindElementById("password").SendKeys("*******");
+            driver.FindElementById("email").SendKeys("****");
+            driver.FindElementById("password").SendKeys("****");
             driver.FindElementById("loginButton").Click();
 
             var text = driver.FindElementByCssSelector(".menuLink.user").Text;
-            Assert.IsTrue(text == "Sümeyye Keskin");
+            //text alanı kontrol edildi.s
+            Assert.IsTrue(text == "Kutlu GÜNGÖR ");
         }
     }
 }
